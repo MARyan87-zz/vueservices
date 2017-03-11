@@ -20,7 +20,7 @@ export default {
       var products = this.products;
       if (this.filterText) {
         var products = products.filter(product => {
-            return product.offering.name.indexOf(filter) > -1;
+            return product.offering.name.toLowerCase().indexOf(filter.toLowerCase()) > -1;
         });
       }
       if (order === "Sort by title") {

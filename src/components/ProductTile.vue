@@ -4,15 +4,16 @@
 
     <div class="flipper">
       <div class="front">
-        <h4 v-on:click="flipCard" v-text="product.offering.name"></h4>
-        <p v-if="product.subscriptionStatus === 'ACTIVE'">Active</p>
-        <p class="" v-else>Expired</p>
+        <h4 v-text="product.offering.name"></h4>
+        <p v-if="product.subscriptionStatus === 'ACTIVE'">Active<span class="more-info" v-on:click="flipCard">More info</span></p>
+        <p v-else>Expired<span class="more-info" v-on:click="flipCard">More info</span></p>
         <button>Download</button>
         <button>Manage</button>
       </div>
-      <div v-on:click="flipCard" class="back">
-        <p v-if="product.offering.description" v-text="product.offering.description"></p>
-        <p v-else v-text="product.offering.name"></p>
+      <div class="back">
+        <p><span v-on:click="flipCard" class="glyphicon glyphicon-chevron-left backBtn"></span><p>
+        <p class="back-info" v-if="product.offering.description" v-text="product.offering.description"></p>
+        <p class="back-info" v-else v-text="product.offering.name"></p>
       </div>
     </div>
   </div>
@@ -31,12 +32,12 @@
       props: ["product"],
       methods: {
         flipCard: function(e) {
-          var flipper = e.target.parentNode.parentNode;
-          console.log(flipper.classList);
-          if (flipper.classList.contains("flip")) {
-              flipper.classList.remove("flip");
+          var flipper = e.target.parentNode.parentNode.parentNode;
+
+          if (e.target.classList.contains("more-info")) {
+              flipper.classList.add("flip");
           } else {
-            flipper.classList.add("flip");
+              flipper.classList.remove("flip");
           }
         }
       },
@@ -72,7 +73,13 @@ var isTrue = true;
 
 p {
   text-align: left;
-  padding-left: 15px;
+  padding: 0 15px;
+}
+
+span {
+  float: right;
+  color: #4178BE;
+  font-weight: bold;
 }
 
 button {
@@ -83,6 +90,15 @@ button {
   border-color: #4178BE;
   border-style: none;
   padding: 10px 20px 12px;
+}
+
+.more-info, .backBtn {
+  cursor: pointer;
+}
+
+.backBtn {
+  float: left;
+  margin: 10px;
 }
 
 .flipper {
@@ -122,17 +138,17 @@ button {
   transform: rotateY(180deg);
 }
 
-.back p {
+.back .back-info {
   color: black;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  width: 100%;
+  font-size: 13px;
+  transform: translateY(-40%);
   text-align: center;
   padding: 0 20px;
   font-family: arial;
-  line-height: 2em;
+  line-height: 1.35em;
 }
 .flip {
   -webkit-transform: rotateY(180deg);

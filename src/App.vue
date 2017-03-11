@@ -12,7 +12,7 @@
             </select>
           </section>
           <section class="col-sm-3 views">
-            <a href="/"><span class="glyphicon glyphicon-th"></span></a>
+            <a href="/#/tiles"><span class="glyphicon glyphicon-th"></span></a>
             <a href="/#/list"><span class="glyphicon glyphicon-th-list"></span></a>
           </section>
         </section>
