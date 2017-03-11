@@ -1,0 +1,10 @@
+{
+ "name": "vueservices",
+ "version": "1.0.0",
+ "description": "vueservices",
+ "author": "Mickey Ryan",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
