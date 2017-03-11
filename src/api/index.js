@@ -1,5 +1,5 @@
 import Vue from 'vue'
 
-export const getPeople = () => {
+export const getProducts = () => {
   return Vue.http.get('/')
 }

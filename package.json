@@ -1,9 +1,8 @@
 {
-  "name": "vuejs-2.0-boilerplate",
+  "name": "vue-p-and-s",
   "version": "1.0.0",
-  "description": "A Vue.js 2.0 Boilerplate with vue-router, vue-resource, vuex",
-  "author": "the6thm0nth <hoonch3@gmail.com>",
-  "private": true,
+  "description": "",
+  "author": "",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
