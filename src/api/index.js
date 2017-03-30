@@ -1,5 +1,9 @@
 import Vue from 'vue'
 
 export const getProducts = () => {
-  return Vue.http.get('/')
-}
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(require('../mocks/products.json'));
+    }, 1000);
+  });
+};
