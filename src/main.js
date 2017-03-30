@@ -4,7 +4,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-Vue.use(VueResource)
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({
@@ -12,4 +12,4 @@ new Vue({
   components: { App },
   router,
   store
-}).$mount('#app')
+}).$mount('#app');

@@ -18,6 +18,7 @@
         </section>
     </section>
     <section class="container">
+      <div v-if="loadingProducts" class="loader"></div>
       <router-view :sortOrder="sortOrder" :products="products" :filterText="filterText"></router-view>
     </section>
   </div>
@@ -27,15 +28,19 @@
 import { mapActions } from "vuex"
 export default {
   name: 'app',
-  data () {
+  data: function () {
     return {
       filterText: "",
       sortOrder: "Sort by title",
-      sortOptions: ["Sort by title", "Sort by date added", "Sort by expiration date"]
-    }
+      sortOptions: ["Sort by title", "Sort by date added", "Sort by expiration date"],
+      loadingProducts: true
+    };
   },
   mounted:function(){
-        this.getProducts();
+        this.getProducts()
+          .then(() => {
+            this.loadingProducts = false;
+          });
   },
   methods: {
      ...mapActions([
@@ -74,4 +79,46 @@ export default {
   margin: 0 10px;
 }
 
+/* Adapted from https://github.com/lukehaas/css-loaders*/
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 20px auto;
+  font-size: 8px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(50, 50, 50, 0.2);
+  border-right: 1.1em solid rgba(50, 50, 50, 0.2);
+  border-bottom: 1.1em solid rgba(50, 50, 50, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 .8s infinite linear;
+  animation: load8 .8s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 </style>
