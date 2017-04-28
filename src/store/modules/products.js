@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import * as types from '../mutation-types'
-import * as apis from '../../api'
+import types from '../mutation-types'
+import apis from '../../api'
 
 const state = {
   products: []
@@ -13,8 +13,8 @@ const mutations = {
 };
 
 const actions = {
-  getProducts({commit}, params) {
-    return apis.getProducts(params)
+  getProducts({commit}) {
+    return apis.getProducts()
       .then(res => {
       	commit(types.GET_PRODUCTS, res);
     })
