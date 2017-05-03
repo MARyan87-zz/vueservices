@@ -8,7 +8,7 @@
         <p v-if="product.subscriptionStatus === 'ACTIVE'">Active<span class="more-info" v-on:click="flipCard">More info</span></p>
         <p v-else>Expired<span class="more-info" v-on:click="flipCard">More info</span></p>
         <button>Download</button>
-        <button>Manage</button>
+        <button v-on:click="openProductMenu(product)">Manage</button>
       </div>
       <div class="back">
         <p><span v-on:click="flipCard" class="glyphicon glyphicon-chevron-left backBtn"></span><p>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-
+  import { mapActions } from "vuex"
 
   export default {
     name: "ProductTile",
@@ -31,6 +31,10 @@
       },
       props: ["product"],
       methods: {
+        ...mapActions([
+          "getUsers"
+        ]),
+
         flipCard: function(e) {
           var flipper = e.target.parentNode.parentNode.parentNode;
 
@@ -39,14 +43,20 @@
           } else {
               flipper.classList.remove("flip");
           }
+        },
+        openProductMenu: function(product) {
+          //TODO this is just a stand-in. This should trigger rendering the full-page menu
+          // TODO just calling the getUsers function to make sure I set it up correctly.
+          console.dir(product);
+          let users = this.getUsers(product.subscriptionID);
+          console.table(users);
         }
       },
       computed: {
 
       }
   }
-  
-var isTrue = true;
+
 </script>
 
 <style scoped>

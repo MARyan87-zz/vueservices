@@ -1,0 +1,82 @@
+{
+  "abc123": [
+    {
+      "email": "markhaja@us.ibm.com",
+      "entitlementDate": "2016-08-19T13:26:02+00:00",
+      "firstName": "James",
+      "ibmUniqueId": "120000PQC6",
+      "isEntitled": true,
+      "lastName": "Markham",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "removing",
+      "userId": "markhaja@us.ibm.com"
+    },
+    {
+      "email": "ljcarotenuto@mac.com",
+      "entitlementDate": "2017-01-31T20:50:36+00:00",
+      "firstName": "Linda",
+      "ibmUniqueId": "270002H5S3",
+      "isEntitled": true,
+      "lastName": "Carotenuto",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "complete",
+      "userId": "ljcarotenuto@mac.com"
+    },
+    {
+      "email": "myservices.ibm@gmail.com",
+      "entitlementDate": "2016-02-22T21:49:21+00:00",
+      "firstName": "Bugs",
+      "ibmUniqueId": "3100010EC5",
+      "isEntitled": true,
+      "lastName": "Bunny",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "complete",
+      "userId": "myservices.ibm@gmail.com"
+    },
+    {
+      "email": "apjoshi@gmail.com",
+      "entitlementDate": "2016-03-22T21:09:32+00:00",
+      "firstName": "apjoshi@gmail.com",
+      "ibmUniqueId": "",
+      "isEntitled": true,
+      "lastName": "apjoshi@gmail.com",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "removing",
+      "userId": "apjoshi@gmail.com"
+    },
+    {
+      "email": "akanksha@gmail.com",
+      "entitlementDate": "2016-03-23T18:21:24+00:00",
+      "firstName": "akanksha@gmail.com",
+      "ibmUniqueId": "",
+      "isEntitled": true,
+      "lastName": "akanksha@gmail.com",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "removing",
+      "userId": "akanksha@gmail.com"
+    },
+    {
+      "email": "jimtest234432@mailinator.com",
+      "entitlementDate": "2016-03-31T17:13:13+00:00",
+      "firstName": "jimtest234432@mailinator.com",
+      "ibmUniqueId": "310001YJDY",
+      "isEntitled": true,
+      "lastName": "jimtest234432@mailinator.com",
+      "licenseAccepted": true,
+      "realm": "o=ibm.com",
+      "role": "admin",
+      "status": "removing",
+      "userId": "jimtest234432@mailinator.com"
+    }
+  ]
+}

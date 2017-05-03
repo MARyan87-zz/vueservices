@@ -17,7 +17,12 @@
         "description": "IBM SPSS Statistics (trial)",
         "name": "IBM SPSS Statistics Subscription"
       },
-      "subscriptionStatus": "ACTIVE"
+      "subscriptionID": "abc123",
+      "subscriptionStatus": "ACTIVE",
+      "supportedOperations": {
+        "supportsUserManagement": true,
+        "maxUsers": 10
+      }
     },
     {
       "creationDate": "2016-10-04T00:39:17+00:00",
